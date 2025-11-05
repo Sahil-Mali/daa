@@ -16,7 +16,7 @@ contract Bank{
 
     function Withdraw() public payable {
         require(accOwner==msg.sender,"You are not an account owner");
-        require(msg.value > balance,"Account doesnot have sufficient balance!");
+        require(msg.value <= balance,"Account doesnot have sufficient balance!");
         balance-=msg.value;
     }
 
